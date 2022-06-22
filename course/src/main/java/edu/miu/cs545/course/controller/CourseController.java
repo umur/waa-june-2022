@@ -17,6 +17,7 @@ public class CourseController {
     public CourseController(CourseService courseService){
         this.courseService=courseService;
     }
+
     //Create
     @PostMapping
     public void addCourse(@RequestBody Course course){
@@ -29,11 +30,13 @@ public class CourseController {
         return courseService.findAllCourses();
     }
 
+    //Update
     @PutMapping("/{id}")
     public void updateCourse(@RequestBody Course course, @PathVariable int id){
         courseService.updateCourse(course, id);
     }
 
+    //Delete
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id){
         courseService.deleteCourse(id);
