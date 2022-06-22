@@ -32,4 +32,6 @@ public class CourseController {
     public void deleteCourse(@PathVariable int id) {
         courseService.deleteCourse(id);
     }
+
+
 }

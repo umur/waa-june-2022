@@ -1,5 +1,6 @@
 package edu.miu.lab2.controller;
 
+import edu.miu.lab2.entity.Course;
 import edu.miu.lab2.entity.Student;
 import edu.miu.lab2.services.StudentServices;
 import lombok.AllArgsConstructor;
@@ -33,4 +34,14 @@ public class StudentController {
     public void deleteStudent(@PathVariable Integer id) {
         studentServices.deleteStudent(id);
     }
+
+    @GetMapping("/major/{major}")
+    public Student getStudentsByMajor(@PathVariable String major) {
+        return studentServices.getStudentsByMajor(major);
+    }
+    @GetMapping("/sid/{id}")
+    public List<Course> getCoursesByStudentId(@PathVariable int id) {
+        return studentServices.getCoursesByStudentId(id);
+    }
+
 }

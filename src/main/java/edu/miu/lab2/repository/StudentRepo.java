@@ -43,7 +43,7 @@ public class StudentRepo {
     }
 
     public ResponseEntity<Student> updateStudent(Student student, int id) {
-        Student  updatedStudent =  students.stream().filter(s -> s.getId() == id).findFirst().get();
+        Student updatedStudent = students.stream().filter(s -> s.getId() == id).findFirst().get();
         int indexToUpdate = students.indexOf(updatedStudent);
 
         students.set(indexToUpdate, student);
@@ -53,5 +53,14 @@ public class StudentRepo {
 
     public void deleteStudent(int id) {
         students.removeIf(s -> s.getId() == id);
+    }
+
+    public Student getStudentsByMajor(String major) {
+        return students.stream().filter(s -> s.getMajor().equals(major)).findFirst().get();
+    }
+
+    public List<Course> getCoursesByStudentId(int sid) {
+        Student student = students.stream().filter(s -> s.getId() == sid).findFirst().get();
+        return student.getCourses();
     }
 }

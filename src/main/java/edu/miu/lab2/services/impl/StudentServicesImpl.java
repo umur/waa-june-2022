@@ -1,5 +1,6 @@
 package edu.miu.lab2.services.impl;
 
+import edu.miu.lab2.entity.Course;
 import edu.miu.lab2.entity.Student;
 import edu.miu.lab2.repository.StudentRepo;
 import edu.miu.lab2.services.StudentServices;
@@ -32,5 +33,14 @@ public class StudentServicesImpl implements StudentServices {
     @Override
     public void deleteStudent(int id) {
        this.studentRepo.deleteStudent(id);
+    }
+
+    @Override
+    public Student getStudentsByMajor(String major) {
+        return this.studentRepo.getStudentsByMajor(major);
+    }
+    @Override
+    public List<Course> getCoursesByStudentId(int id) {
+        return this.studentRepo.getCoursesByStudentId(id);
     }
 }
