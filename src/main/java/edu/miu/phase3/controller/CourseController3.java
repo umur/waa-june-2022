@@ -1,17 +1,17 @@
-package edu.miu.phase2.controller;
+package edu.miu.phase3.controller;
 
-import edu.miu.phase2.dto.CourseDto;
-import edu.miu.phase2.services.CourseServices2;
+import edu.miu.phase3.dto.CourseDto;
+import edu.miu.phase3.services.CourseServices3;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/phase2/courses")
+@RequestMapping("/phase3/courses")
 @AllArgsConstructor
-public class CourseController2 {
-    private final CourseServices2 courseService;
+public class CourseController3 {
+    private final CourseServices3 courseService;
 
     @GetMapping("/")
     public List<CourseDto> getCourses() {

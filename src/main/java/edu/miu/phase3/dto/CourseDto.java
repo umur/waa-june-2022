@@ -1,7 +1,8 @@
-package edu.miu.phase2.dto;
+package edu.miu.phase3.dto;
 
-import edu.miu.phase2.entity.Course;
+import edu.miu.phase3.entity.Course;
 import lombok.Data;
+import org.modelmapper.ModelMapper;
 
 @Data
 public class CourseDto {
@@ -9,20 +10,4 @@ public class CourseDto {
     private int id;
     private String name;
     private String code;
-
-    public CourseDto toDto(Course course){
-        CourseDto dto = new CourseDto();
-        dto.setId(course.getId());
-        dto.setCode(course.getCode());
-        dto.setName(course.getName());
-        return dto;
-    }
-
-    public Course toEntity(){
-        Course course = new Course();
-        course.setId(this.id);
-        course.setName(this.name);
-        course.setCode(this.code);
-        return course;
-    }
 }

@@ -1,11 +1,11 @@
-package edu.miu.phase2.services;
+package edu.miu.phase3.services;
 
-import edu.miu.phase2.dto.CourseDto;
-import edu.miu.phase2.dto.StudentDTO;
+import edu.miu.phase3.dto.CourseDto;
+import edu.miu.phase3.dto.StudentDTO;
 
 import java.util.List;
 
-public interface StudentServices2 {
+public interface StudentServices3 {
 
     List<StudentDTO> getStudents();
 

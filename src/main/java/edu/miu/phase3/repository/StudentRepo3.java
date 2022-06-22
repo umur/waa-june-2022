@@ -1,7 +1,7 @@
-package edu.miu.phase2.repository;
+package edu.miu.phase3.repository;
 
-import edu.miu.phase2.entity.Course;
-import edu.miu.phase2.entity.Student;
+import edu.miu.phase3.entity.Course;
+import edu.miu.phase3.entity.Student;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Repository;
@@ -11,11 +11,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @Repository
-public class StudentRepo2 {
+public class StudentRepo3 {
 
     List<Student> students = new ArrayList<>();
 
-    public StudentRepo2() {
+    public StudentRepo3() {
         List<Course> c1 = Arrays.asList(
                 new Course(1, "Java", "CS111"),
                 new Course(2, "big data", "CS200")
