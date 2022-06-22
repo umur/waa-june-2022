@@ -25,4 +25,10 @@ public class CourseRepository {
     public void create(Course c){
         courses.add(c);
     }
+
+    public void delete(int id) { courses.remove(id);}
+
+    public void update(int id, Course course) {
+
+    }
 }

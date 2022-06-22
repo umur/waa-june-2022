@@ -12,21 +12,30 @@ import java.util.List;
 @RequestMapping("/courses")
 public class CourseController {
     private CourseService courseService;
-    private StudentService studentService;
 
     @Autowired
-    public CourseController(CourseService courseService, StudentService studentService){
+    public CourseController(CourseService courseService){
         this.courseService=courseService;
-        this.studentService=studentService;
     }
-
-    @GetMapping
-    public List<Course> findAllCourses{
-        return courseService.
-    }
-
+    //Create
     @PostMapping
-    public void addCourse{
-        return courseService.createNewCourse(@RequestBody Course course);
+    public void addCourse(@RequestBody Course course){
+        courseService.createNewCourse(course);
+    }
+
+    //Read
+    @GetMapping
+    public List<Course> findAllCourses(){
+        return courseService.findAllCourses();
+    }
+
+    @PutMapping("/{id}")
+    public void updateCourse(@RequestBody Course course, @PathVariable int id){
+        courseService.updateCourse(course, id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id){
+        courseService.deleteCourse(id);
     }
 }

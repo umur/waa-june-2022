@@ -15,21 +15,21 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public List<Course> findAllCourses() {
-        return null;
+        return courseRepository.findAll();
     }
 
     @Override
     public void createNewCourse(Course course) {
-
+        courseRepository.create(course);
     }
 
     @Override
-    public Course updateCourse(Course course) {
-        return null;
+    public void updateCourse(Course course, int id) {
+        courseRepository.update(id, course);
     }
 
     @Override
-    public void deleteCourse(Course course) {
-
+    public void deleteCourse(int id) {
+        courseRepository.delete(id);
     }
 }
