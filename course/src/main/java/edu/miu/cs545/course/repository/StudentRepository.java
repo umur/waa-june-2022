@@ -1,5 +1,6 @@
 package edu.miu.cs545.course.repository;
 
+import edu.miu.cs545.course.entity.Course;
 import edu.miu.cs545.course.entity.Student;
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class StudentRepository {
-    private static List<Student> students = new ArrayList<>();
+    private static final List<Student> students = new ArrayList<>();
     public StudentRepository(){
         Student s1 = new Student(1,"Raul","Tejada", "r.tejada@funi.com","Mechanical Engineering",3.7);
         Student s2 = new Student(2,"Veronica","Santangelo", "v.santangelo@funi.com","Computer Programming",3.82);
@@ -26,9 +27,25 @@ public class StudentRepository {
     public void update(int id, Student student) {
         Student stu = students.get(id);
         if(stu==null){
-            System.out.println("Its Not him");
+            System.out.println("Its Not Them");
         }else{
+            stu.setLastName(student.getLastName());
+            stu.setFirstName(student.getFirstName());
+            stu.setEmail(student.getEmail());
+            stu.setGpa(student.getGpa());
+            System.out.println("Found Them And Updated");
+        }
+    }
 
+    public List<Student> getStudentsByMajor(String major){
+        return students.stream().filter(i->i.getMajor().equals(major)).toList();
+    }
+
+    public List<Course> getCourseByStudentId(int id) {
+        if(students.get(id)==null) {
+            return null;
+        }else{
+            return students.get(id).getCoursesTaken();
         }
     }
 }

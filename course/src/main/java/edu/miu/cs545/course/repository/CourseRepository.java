@@ -1,6 +1,7 @@
 package edu.miu.cs545.course.repository;
 
 import edu.miu.cs545.course.entity.Course;
+import edu.miu.cs545.course.entity.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class CourseRepository {
-    private static List<Course> courses = new ArrayList<>();
+    private static final List<Course> courses = new ArrayList<>();
     public CourseRepository(){
         Course c1 = new Course(1,"Fundamentals of Fundamentals", "FN101");
         Course c2 = new Course(2,"Advanced Fundamentals", "FN102");
@@ -29,6 +30,13 @@ public class CourseRepository {
     public void delete(int id) { courses.remove(id);}
 
     public void update(int id, Course course) {
-
+        Course crs = courses.get(id);
+        if(crs==null){
+            System.out.println("Its Not It");
+        }else{
+            crs.setCode(course.getCode());
+            crs.setName(course.getName());
+            System.out.println("Found It And Updated");
+        }
     }
 }

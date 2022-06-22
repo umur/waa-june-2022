@@ -15,7 +15,7 @@ public class StudentServiceImpl implements StudentService {
     private final StudentRepository studentRepository;
 
     @Override
-    public List<Student> findAllStudent() {
+    public List<Student> getAllStudents() {
         return studentRepository.findAll();
     }
 
@@ -32,5 +32,15 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public void deleteStudent(int id) {
         studentRepository.delete(id);
+    }
+
+    @Override
+    public List<Student> getStudentsByMajor(String major) {
+        return studentRepository.getStudentsByMajor(major);
+    }
+
+    @Override
+    public List<Course> getCoursesByStudentId(int id) {
+        return studentRepository.getCourseByStudentId(id);
     }
 }

@@ -7,7 +7,9 @@ import java.util.List;
 
 public interface StudentService {
     void createNewStudent(Student student);
-    List<Student> findAllStudent();
+    List<Student> getAllStudents();
     void updateStudent(Student student, int id);
     void deleteStudent(int id);
+    List<Student> getStudentsByMajor(String major);
+    List<Course> getCoursesByStudentId(int id);
 }

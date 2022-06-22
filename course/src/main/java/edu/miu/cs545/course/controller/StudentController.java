@@ -1,5 +1,6 @@
 package edu.miu.cs545.course.controller;
 
+import edu.miu.cs545.course.entity.Course;
 import edu.miu.cs545.course.entity.Student;
 import edu.miu.cs545.course.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/courses")
 public class StudentController {
-    private StudentService studentService;
+    private final StudentService studentService;
 
     @Autowired
     public StudentController(StudentService studentService){
@@ -26,7 +27,7 @@ public class StudentController {
     //Read
     @GetMapping
     public List<Student> findAllStudents(){
-        return studentService.findAllStudent();
+        return studentService.getAllStudents();
     }
 
     //Update
@@ -39,6 +40,17 @@ public class StudentController {
     @DeleteMapping("/{id}")
     public void deleteStudent(@PathVariable int id){
         studentService.deleteStudent(id);
+    }
+
+    //Find By Major
+    @GetMapping("/major/{major}")
+    public List<Student> getStudentsByMajor(@PathVariable String major){
+        return studentService.getStudentsByMajor(major);
+    }
+
+    @GetMapping("/findCoursesByStudentId/{id}")
+    public List<Course> getCoursesByStudentId(@PathVariable int id){
+        return studentService.getCoursesByStudentId(id);
     }
 
 }
