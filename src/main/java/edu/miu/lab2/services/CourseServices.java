@@ -1,7 +1,6 @@
 package edu.miu.lab2.services;
 
 import edu.miu.lab2.entity.Course;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
