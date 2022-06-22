@@ -16,21 +16,21 @@ public class StudentServicesImpl implements StudentServices {
 
     @Override
     public List<Student> getStudents() {
-        return null;
+       return this.studentRepo.getStudents();
     }
 
     @Override
-    public boolean addStudent(Student student) {
-        return false;
+    public void addStudent(Student student) {
+        this.studentRepo.addStudent(student);
     }
 
     @Override
     public void updateStudent(Student student, int id) {
-
+        this.studentRepo.updateStudent(student, id);
     }
 
     @Override
-    public int deleteStudent(int id) {
-        return 0;
+    public void deleteStudent(int id) {
+       this.studentRepo.deleteStudent(id);
     }
 }

@@ -16,21 +16,21 @@ public class CourseServicesImpl implements CourseServices {
 
     @Override
     public List<Course> getCourses() {
-        return null;
+        return courseRepo.getCourses();
     }
 
     @Override
-    public boolean updateCourse(Course course, int id) {
-        return false;
+    public void updateCourse(Course course, int id) {
+        courseRepo.updateCourse(course, id);
     }
 
     @Override
     public void addCourse(Course course) {
-
+        this.courseRepo.addCourse(course);
     }
 
     @Override
-    public int deleteCourse(int id) {
-        return 0;
+    public void deleteCourse(int id) {
+        this.courseRepo.deleteCourse(id);
     }
 }

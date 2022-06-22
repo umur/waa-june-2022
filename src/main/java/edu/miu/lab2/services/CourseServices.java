@@ -8,9 +8,9 @@ public interface CourseServices {
 
     List<Course> getCourses();
 
-    boolean updateCourse(Course course, int id);
+    void updateCourse(Course course, int id);
 
     void addCourse(Course course);
 
-    int deleteCourse(int id);
+    void deleteCourse(int id);
 }

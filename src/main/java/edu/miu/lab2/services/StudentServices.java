@@ -8,9 +8,9 @@ public interface StudentServices {
 
     List<Student> getStudents();
 
-    boolean addStudent(Student student);
+    void addStudent(Student student);
 
     void updateStudent(Student student, int id);
 
-    int deleteStudent(int id);
+    void deleteStudent(int id);
 }
