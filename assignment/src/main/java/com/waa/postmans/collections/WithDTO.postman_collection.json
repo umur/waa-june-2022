@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "1cac47eb-6750-445c-a81b-1d9a7487c884",
+		"name": "WithDTO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6217193"
+	},
+	"item": [
+		{
+			"name": "Get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/studentsMapperDto",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"studentsMapperDto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 4,\r\n        \"firstName\": \"User Four\",\r\n        \"lastName\": \"Pokhrel\",\r\n        \"email\": \"a@g.com\",\r\n        \"major\": \"COMPRO\",\r\n        \"courseList\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"WAA\",\r\n                \"code\": \"02\"\r\n            },\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"MPP\",\r\n                \"code\": \"03\"\r\n            }\r\n        ],\r\n        \"gpa\": 3.98\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/students/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"firstName\": \"twqqqo\",\r\n        \"lastName\": \"aa\",\r\n        \"email\": \"a@g.com\",\r\n        \"major\": \"MBA\",\r\n        \"courseList\": [\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"WAA\",\r\n                \"code\": \"02\"\r\n            },\r\n            {\r\n                \"id\": 1,\r\n                \"name\": \"MPP\",\r\n                \"code\": \"03\"\r\n            }\r\n        ],\r\n        \"gpa\": 3.8\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/students/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"students",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
