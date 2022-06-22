@@ -15,10 +15,15 @@ public class StudentRepo {
   @Autowired
   CourseRepo courseRepo;
   List<Course> courseList = new ArrayList<>();
+  List<Course>courseList1 = new ArrayList<>();
+
 
   public StudentRepo() {
-    Student c1 = new Student(1, "Sachin", "Tandan", "Standan@miu.edu", "major1", courseRepo.findAll(), 3.5);
-    Student c2 = new Student(2, "Sac", "Tandan", "Standan12@miu.edu", "major2", courseRepo.findAll(), 4.5);
+    courseList1.add(new Course(12,"course12","cs555"));
+    courseList1.add(new Course(13,"course13","cs544"));
+    courseList1.add(new Course(14,"course14","cs600"));
+    Student c1 = new Student(1, "Sachin", "Tandan", "Standan@miu.edu", "major1", courseList1, 3.5);
+    Student c2 = new Student(2, "Sac", "Tandan", "Standan12@miu.edu", "major2", courseList1, 4.5);
 
   }
 
