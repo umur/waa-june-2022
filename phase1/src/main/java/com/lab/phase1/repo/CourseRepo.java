@@ -29,7 +29,12 @@ public class CourseRepo {
         courses.remove(id-1);
     }
 
-    public void update(Course c) {
-//        courses.
+    public void updateById(Course newCourse, int id) {
+        Course oldCourse = findAll()
+                .stream()
+                .filter(c-> c.getId() == id)
+                .findFirst().get();
+        oldCourse.setCode(newCourse.getCode());
+        oldCourse.setName(newCourse.getName());
     }
 }

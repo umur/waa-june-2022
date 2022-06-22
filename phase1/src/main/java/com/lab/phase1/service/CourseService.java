@@ -11,4 +11,6 @@ public interface CourseService {
     void create(Course course);
 
     void delete(int id);
+
+    void update(Course course, int id);
 }

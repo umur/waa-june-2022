@@ -17,4 +17,17 @@ public class StudentRepo {
     }
 
     public void create(Student s) { students.add(s);}
+
+    public void deleteById(int id) {
+        students.remove(id-1);
+    }
+
+    public Student findById(int id) {
+        return students
+                .stream()
+                .filter(s-> s.getId() == id)
+                .findFirst()
+                .orElse(null);
+    }
+
 }

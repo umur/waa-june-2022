@@ -37,6 +37,7 @@ public class CourseController {
 
     @PutMapping("/{id}")
     public ResponseEntity<?> update(@RequestBody Course course, @PathVariable int id) {
+        courseService.update(course, id);
         return ResponseEntity.ok("Updated");
     }
 

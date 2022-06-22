@@ -1,5 +1,6 @@
 package com.lab.phase1.controller;
 
+import com.lab.phase1.model.Course;
 import com.lab.phase1.model.Student;
 import com.lab.phase1.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,8 +27,17 @@ public class StudentController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
-
+        studentService.delete(id);
         return ResponseEntity.ok("Deleted");
     }
 
+    @GetMapping("/search")
+    public List<Student> getStudentsByMajor(@RequestParam(name = "major") String major) {
+        return studentService.findByMajor(major);
+    }
+
+    @GetMapping("{id}/course")
+    public List<Course> getCoursesByStudentId(@PathVariable int id) {
+        return studentService.findByIdCourses(id);
+    }
 }
