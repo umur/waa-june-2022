@@ -32,7 +32,8 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public CourseDto save(CourseDto courseDto) {
-        var course = courseRepository.save(new Course(courseDto.getId(), courseDto.getName(),courseDto.getCode()));
+
+        var course = courseRepository.save(new Course(courseRepository.getCounter(), courseDto.getName(),courseDto.getCode()));
         return new CourseDto(courseDto.getId(), courseDto.getCode(), course.getName());
     }
 

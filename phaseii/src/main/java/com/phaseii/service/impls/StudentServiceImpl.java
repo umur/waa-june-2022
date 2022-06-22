@@ -35,7 +35,7 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public StudentDto save(StudentDto studentDto) {
-        var student =  studentRepository.save(new Student(studentDto.getId(), studentDto.getFirstName(),studentDto.getLastName(),studentDto.getEmail(),studentDto.getMajor(),studentDto.getCoursesTaken().stream().map(course -> new Course(course.getId(),course.getName(),course.getCode())).collect(Collectors.toList())));
+        var student =  studentRepository.save(new Student(studentRepository.getCounter(), studentDto.getFirstName(),studentDto.getLastName(),studentDto.getEmail(),studentDto.getMajor(),studentDto.getCoursesTaken().stream().map(course -> new Course(course.getId(),course.getName(),course.getCode())).collect(Collectors.toList())));
         return new StudentDto(student.getId(),student.getFirstName(),student.getLastName(),student.getEmail(),student.getMajor(),student.getCoursesTaken().stream().map(course -> new CourseDto(course.getId(),course.getName(),course.getCode())).collect(Collectors.toList()));
     }
 

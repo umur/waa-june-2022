@@ -15,6 +15,12 @@ public class CourseRepository {
         courses.add(new Course(2L,"MWA","CS-546"));
     }
 
+    private static Long counter = 3L;
+
+    public Long getCounter(){
+        return CourseRepository.counter++;
+    }
+
     public List<Course> findAll(){
         return courses;
     }

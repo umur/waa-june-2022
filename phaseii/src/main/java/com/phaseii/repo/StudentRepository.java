@@ -26,6 +26,12 @@ public class StudentRepository {
         students.add(student2);
     }
 
+    private static Long counter = 3L;
+
+    public Long getCounter(){
+        return StudentRepository.counter++;
+    }
+
     public List<Student> findAll(){
         return students;
     }
