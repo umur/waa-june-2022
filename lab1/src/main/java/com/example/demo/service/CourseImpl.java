@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.dto.CourseDTO;
 import com.example.demo.entity.Course;
 import com.example.demo.repo.CourseRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,22 +14,14 @@ public class CourseImpl implements CourseService {
   CourseRepo courseRepo;
 
   @Override
-  public List<CourseDTO> findAll() {
-     List<Course> courseList=courseRepo.findAll();
-    List<CourseDTO> dtos = new ArrayList<>();
-    for (Course course:courseList
-         ) {
-      CourseDTO courseDTO = new CourseDTO();
-      CourseDTO courseDTO1= courseDTO.toDto(course);
-      dtos.add(courseDTO1);
-    }
-    return dtos;
+  public List<Course> findAll() {
+   return  courseRepo.findAll();
+
   }
 
   @Override
-  public void create(CourseDTO courseDto) {
-   Course course=  courseDto.toEntity();
-    courseRepo.create(course);
+  public void create(Course courseDto) {
+    courseRepo.create(courseDto);
   }
 
   @Override
@@ -39,8 +30,7 @@ public class CourseImpl implements CourseService {
   }
 
   @Override
-  public void update(int id,CourseDTO dto) {
-    Course course= dto.toEntity();
-  courseRepo.update(id,course);
+  public void update(int id,Course dto) {
+  courseRepo.update(id,dto);
   }
 }

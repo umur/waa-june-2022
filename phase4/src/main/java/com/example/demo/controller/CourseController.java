@@ -1,8 +1,9 @@
 package com.example.demo.controller;
 
 
-import com.example.demo.entity.Course;
+import com.example.demo.dto.CourseDto;
 import com.example.demo.service.CourseImpl;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,20 +14,23 @@ import java.util.List;
 public class CourseController {
   @Autowired
   private CourseImpl courseService;
+  @Autowired
+  private ModelMapper modelMapper;
 
   @GetMapping
-  public List<Course> findAllProducts() {
-    // http://localhost:8080/courses
+  public List<CourseDto> findAllCourse() {
+
     return courseService.findAll();
   }
 
   @PostMapping
-  public void create(@RequestBody Course dto) {
+  public void create(@RequestBody CourseDto dto) {
+
     courseService.create(dto);
   }
 
   @PutMapping("/{id}")
-  public void update(@RequestBody Course dto,
+  public void update(@RequestBody CourseDto dto,
                      @PathVariable int id) {
     courseService.update(id, dto);
   }

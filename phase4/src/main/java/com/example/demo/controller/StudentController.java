@@ -1,9 +1,9 @@
 package com.example.demo.controller;
 
-
-import com.example.demo.entity.Course;
-import com.example.demo.entity.Student;
+import com.example.demo.dto.CourseDto;
+import com.example.demo.dto.StudentDto;
 import com.example.demo.service.StudentServiceImpl;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,18 +16,18 @@ public class StudentController {
   private StudentServiceImpl studentService;
 
   @GetMapping
-  public List<Student> findAllStudents() {
+  public List<StudentDto> findAllStudents() {
     return studentService.findAll();
   }
 
   @PostMapping
-  public void create(@RequestBody Student dto) {
+  public void create(@RequestBody StudentDto dto) {
     studentService.create(dto);
 
   }
 
   @PutMapping("/{id}")
-  public void update(@RequestBody Student dto, @PathVariable int id) {
+  public void update(@RequestBody StudentDto dto, @PathVariable int id) {
     studentService.update(id, dto);
   }
 
@@ -38,12 +38,12 @@ public class StudentController {
   }
 
   @GetMapping("/{id}")
-  public List<Course> getCoursesByStudentId(@PathVariable int studentId) {
+  public List<CourseDto> getCoursesByStudentId(@PathVariable int studentId) {
     return studentService.getCoursesByStudentId(studentId);
   }
 
   @GetMapping("/{major}")
-  public List<Student> getStudentsByMajor(@PathVariable String major) {
+  public List<StudentDto> getStudentsByMajor(@PathVariable String major) {
     return studentService.getStudentsByMajor(major);
   }
 }
