@@ -1,10 +1,6 @@
-/**
- * @author Saugat pageni
- * main.js
- */
+
 
 "use strict";
-
 const serverUrl = 'http://localhost:8081/p2';
 let students = [];
 
@@ -12,7 +8,6 @@ let students = [];
 window.onload = function () {
     // load data
     loadInitialData();
-
     // add student
     document.getElementById('btn-add-student').onclick = (event) => {
         event.preventDefault();
@@ -21,7 +16,8 @@ window.onload = function () {
     }
 
     // edit student
-    document.getElementById('btn-edit-student').onclick = async (event) => {
+    document.getElementById('btn-edit-student').onclick =
+    async (event) => {
         event.preventDefault();
         await editStudent();
         await loadInitialData();
@@ -49,11 +45,11 @@ window.onload = function () {
                 this.checked = false;
             });
         }
-    });
+     });
     checkbox.click(function () {
-        if (!this.checked) {
+         if (!this.checked) {
             $("#selectAll").prop("checked", false);
-        }
+         }
     });
 
 }
@@ -61,27 +57,27 @@ window.onload = function () {
 const loadInitialData = async () => {
     // fetch students
     let url = `${serverUrl}/students`;
-    students = await getFetch(url);
+     students = await getFetch(url);
 
     let tableData = '';
-    students.forEach((student, index) => {
+     students.forEach((student, index) => {
         const sn = index + 1;
         tableData += `
-         <tr>
+          <tr>
             <td>
               <span class="custom-checkbox">
-                <input type="checkbox" id="checkbox${sn}" name="options[]" value="1">
+                 <input type="checkbox" id="checkbox${sn}" name="options[]" value="1">
                 <label for="checkbox${sn}"></label>
               </span>
-            </td>
+             </td>
             <td>${student.id}</td>
             <td>${student.firstName}</td>
             <td>${student.lastName}</td>
-            <td>${student.email}</td>
+             <td>${student.email}</td>
             <td>${student.major}</td>
             <td>
               <a href="#editStudentModal" class="edit" data-toggle="modal"><i class="material-icons"
-                  data-toggle="tooltip" onclick="displayEditStudent(${student.id})" title="Edit">&#xE254;</i></a>
+                   data-toggle="tooltip" onclick="displayEditStudent(${student.id})" title="Edit">&#xE254;</i></a>
               <a href="#deleteStudentModal" class="delete" data-toggle="modal"><i class="material-icons"
                   data-toggle="tooltip"  onclick="perserveStudentId(${student.id})" title="Delete">&#xE872;</i></a>
             </td>
@@ -91,7 +87,7 @@ const loadInitialData = async () => {
 
     let template = `
   <table class="table table-striped table-hover">
-        <thead>
+         <thead>
           <tr>
             <th>
               <span class="custom-checkbox">
@@ -101,15 +97,15 @@ const loadInitialData = async () => {
             </th>
             <th>Id</th>
             <th>First Name</th>
-            <th>Last Name</th>
+             <th>Last Name</th>
             <th>Email</th>
             <th>Major</th>
             <th>Actions</th>
           </tr>
-        </thead>
+         </thead>
         <tbody>
           
-          ${tableData}
+           ${tableData}
         </tbody>
       </table>
   `;
@@ -120,19 +116,19 @@ const loadInitialData = async () => {
 const addStudent = async () => {
     let body = JSON.stringify({
         id: document.getElementById('id-add').value,
-        firstName: document.getElementById('fname-add').value,
+         firstName: document.getElementById('fname-add').value,
         lastName: document.getElementById('lname-add').value,
-        email: document.getElementById('email-add').value,
+         email: document.getElementById('email-add').value,
         major: document.getElementById('major-add').value,
-        gpa: document.getElementById('gpa-add').value,
+         gpa: document.getElementById('gpa-add').value,
         coursesTaken: null
     });
-    await postFetch(`${serverUrl}/students`, body);
+     await postFetch(`${serverUrl}/students`, body);
     $('#addStudentModal').modal('hide');
 }
 
 const displayEditStudent = async (id) => {
-    let student = students.find(s => s.id === id);
+     let student = students.find(s => s.id === id);
     document.getElementById('id-edit').value = student.id;
     document.getElementById('fname-edit').value = student.firstName;
     document.getElementById('lname-edit').value = student.lastName;
