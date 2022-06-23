@@ -1,41 +1,45 @@
 package miu.edu.phase3.service.impl;
 
-import miu.edu.phase2.dto.CourseDto;
-import miu.edu.phase2.dto.StudentDto;
-import miu.edu.phase2.repo.StudentRepo;
-import miu.edu.phase2.service.StudentService;
+import lombok.AllArgsConstructor;
+import miu.edu.phase3.dto.CourseDto;
+import miu.edu.phase3.dto.StudentDto;
+import miu.edu.phase3.entity.Student;
+import miu.edu.phase3.repo.StudentRepo;
+import miu.edu.phase3.service.StudentService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@AllArgsConstructor
 public class StudentServiceImpl implements StudentService {
 //    @Autowired
     private final StudentRepo studentRepo;
+    private final ModelMapper mapper;
 
-    public StudentServiceImpl(StudentRepo studentRepo) {
-        this.studentRepo = studentRepo;
-    }
 
     @Override
     public List<StudentDto> findAll() {
-        return studentRepo.findAll();
+        return studentRepo.findAll().stream()
+                .map(student -> mapper.map(student, StudentDto.class))
+                .toList();
     }
 
     @Override
     public StudentDto findOne(int id) {
-        return studentRepo.findOne(id);
+        return mapper.map(studentRepo.findOne(id), StudentDto.class);
     }
 
     @Override
     public StudentDto create(StudentDto student) {
-        return studentRepo.create(student);
+        return mapper.map(studentRepo.create(mapper.map(student, Student.class)), StudentDto.class);
     }
 
     @Override
     public StudentDto update(StudentDto student, int id) {
-        return studentRepo.update(student,id);
+        return mapper.map(studentRepo.update(mapper.map(student, Student.class),id), StudentDto.class);
     }
 
     @Override
@@ -45,11 +49,13 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<StudentDto> getStudentsByMajor(String major) {
-        return studentRepo.findAll().stream().filter(stu -> stu.getMajor().equals(major)).collect(Collectors.toList());
+        var students = studentRepo.findAll().stream().filter(stu -> stu.getMajor().equals(major));
+        return students.map(student -> mapper.map(student, StudentDto.class)).toList();
     }
 
     @Override
     public List<CourseDto> getCoursesByStudentId(int id) {
-        return studentRepo.findOne(id).getCoursesTaken();
+//        return mapper.map(studentRepo.findOne(id).getCoursesTaken(), CourseDto.class);
+        return null;
     }
 }

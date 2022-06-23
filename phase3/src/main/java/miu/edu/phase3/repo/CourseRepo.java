@@ -1,7 +1,7 @@
 package miu.edu.phase3.repo;
 
-import miu.edu.phase2.dto.CourseDto;
-import miu.edu.phase2.entity.Course;
+import miu.edu.phase3.dto.CourseDto;
+import miu.edu.phase3.entity.Course;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public class CourseRepo {
-    private static List<CourseDto> courses = new ArrayList<>();
+    private static List<Course> courses = new ArrayList<>();
 
     public CourseRepo() {
         Course c1 = new Course(1, "WAA", "CS545");
@@ -19,18 +19,18 @@ public class CourseRepo {
         courses.add(c2);
     }
 
-    public List<CourseDto> findAll() {
+    public List<Course> findAll() {
         return courses;
     }
 
-    public CourseDto findOne(int id) {
+    public Course findOne(int id) {
         return courses.stream().filter(crs -> crs.getId() == id).findFirst().get();
     }
-    public void create(CourseDto c) {
+    public void create(Course c) {
         courses.add(c);
     }
 
-    public void update(CourseDto c, int id) {
+    public void update(Course c, int id) {
         for(int i=0; i<courses.size(); i++) {
             if(courses.get(i).getId() == id) {
                 var course = courses.get(i);

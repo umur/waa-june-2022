@@ -1,9 +1,9 @@
 package miu.edu.phase3.controller;
 
 
-import miu.edu.phase2.dto.CourseDto;
-import miu.edu.phase2.dto.StudentDto;
-import miu.edu.phase2.service.StudentService;
+import miu.edu.phase3.dto.CourseDto;
+import miu.edu.phase3.dto.StudentDto;
+import miu.edu.phase3.service.StudentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

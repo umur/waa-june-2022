@@ -1,9 +1,9 @@
 package miu.edu.phase3.repo;
 
-import miu.edu.phase2.dto.CourseDto;
-import miu.edu.phase2.dto.StudentDto;
-import miu.edu.phase2.entity.Course;
-import miu.edu.phase2.entity.Student;
+import miu.edu.phase3.dto.CourseDto;
+import miu.edu.phase3.dto.StudentDto;
+import miu.edu.phase3.entity.Course;
+import miu.edu.phase3.entity.Student;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -11,13 +11,13 @@ import java.util.List;
 
 @Repository
 public class StudentRepo {
-    private static List<StudentDto> students = new ArrayList<>();
+    private static List<Student> students = new ArrayList<>();
 
     public StudentRepo() {
         Student s1 = new Student(1, "Anjana", "Sharma","ansharma@miu.edu", "compro", (float) 3.6);
         Student s2 = new Student(2, "Bijaya", "Parajuli","sharma@miu.edu", "compro", (float) 3.95);
-        CourseDto c1 = new Course(1, "WAA", "CS545");
-        CourseDto c2 = new Course(2, "WAP", "CS472");
+        Course c1 = new Course(1, "WAA", "CS545");
+        Course c2 = new Course(2, "WAP", "CS472");
 
         s1.addCourse(c1);
         s2.addCourse(c1);
@@ -28,16 +28,16 @@ public class StudentRepo {
         students.add(s2);
     }
 
-    public List<StudentDto> findAll() {
+    public List<Student> findAll() {
         return students;
     }
 
-    public StudentDto create(StudentDto student) {
+    public Student create(Student student) {
         students.add(student);
         return student;
     }
 
-    public StudentDto update(StudentDto student, int id) {
+    public Student update(Student student, int id) {
         var std = students.stream().filter(stu -> stu.getId() == id).findFirst();
         if(std.isPresent()) {
             students.remove(std);
@@ -55,7 +55,7 @@ public class StudentRepo {
         }
     }
 
-    public StudentDto findOne(int id) {
+    public Student findOne(int id) {
         return students.stream().filter(stu -> stu.getId() == id).findFirst().get();
     }
 }
