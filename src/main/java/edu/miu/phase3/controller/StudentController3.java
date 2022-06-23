@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/phase3/students")
 @AllArgsConstructor
+@CrossOrigin
 public class StudentController3 {
 
     private final StudentServices3 studentServices;

@@ -10,6 +10,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/phase3/courses")
 @AllArgsConstructor
+@CrossOrigin
 public class CourseController3 {
     private final CourseServices3 courseService;
 
