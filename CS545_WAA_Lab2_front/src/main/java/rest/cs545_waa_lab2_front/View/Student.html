@@ -8,6 +8,7 @@
 <script src="index.js"></script>
 </head>
 <body>
+<div id="cnt">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
@@ -20,23 +21,23 @@
 
 <div class="container" style="padding-left: 20px; width: 500px">
 <!--<h1 style="text-align: center">Student-Information-System</h1>-->
-    <form class="row g-3" action="" method=get>
+    <form class="row g-3" action="http://localhost:2030/students" method=get>
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">StudentId</label>
-            <input type="email" class="form-control" id="sId">
+            <input type="text" class="form-control" id="sId">
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">FirstName</label>
-            <input type="password" class="form-control" id="sFName">
+            <input type="text" class="form-control" id="sFName">
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">LastName</label>
-            <input type="password" class="form-control" id="sLName">
+            <input type="text" class="form-control" id="sLName">
         </div>
 
         <div class="col-md-6">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input type="text" class="form-control" id="inputEmail4">
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Password</label>
@@ -44,7 +45,7 @@
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Major</label>
-            <input type="password" class="form-control" id="sMajor">
+            <input type="text" class="form-control" id="sMajor">
         </div>
         <div class="col-md-4">
             <label for="sCourse" class="form-label">Courses Taken</label>
@@ -59,7 +60,7 @@
         </div>
         <div class="col-md-6">
             <label for="inputPassword4" class="form-label">GPA</label>
-            <input type="password" class="form-control" id="sGpa">
+            <input type="text" class="form-control" id="sGpa">
         </div>
 <!--        <div class="col-md-2">-->
 <!--            <label for="inputZip" class="form-label">Zip</label>-->
@@ -74,7 +75,7 @@
 <!--            </div>-->
 <!--        </div>-->
         <div class="col-12">
-          <a href="studentHomePage.html">  <button type="submit" class="btn btn-primary">Sign in</button>
+          <a href="studentHomePage.html">  <button  id="btn" type="submit" class="btn btn-primary">Sign in</button>
           </a>
         </div>
 
@@ -113,6 +114,7 @@
 <!--</form>-->
 
 <!-- JavaScript Bundle with Popper -->
+</div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

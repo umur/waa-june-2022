@@ -8,7 +8,7 @@ import java.util.List;
 @Setter
 @Getter
 @Data
-@RequiredArgsConstructor
+
 public class Student {
 
     private int id;
@@ -21,4 +21,6 @@ public class Student {
     private double gpa;
 
 
+    public Student(int i, String luwam, String tsegay, String s, String compro, List<Course> courses, double v) {
+    }
 }
