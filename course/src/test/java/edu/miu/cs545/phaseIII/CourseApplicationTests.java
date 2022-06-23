@@ -1,4 +1,4 @@
-package edu.miu.cs545.course;
+package edu.miu.cs545.phaseIII;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

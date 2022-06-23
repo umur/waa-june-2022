@@ -1,4 +1,4 @@
-package edu.miu.cs545.course.entity;
+package edu.miu.cs545.phaseIII.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
