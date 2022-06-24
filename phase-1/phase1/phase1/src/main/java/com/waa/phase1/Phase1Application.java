@@ -8,6 +8,7 @@ public class Phase1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Phase1Application.class, args);
+//		System.out.println("Phase-I Complete");
 	}
 
 }
