@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lab1-Phase1/Lab1.iml" filepath="$PROJECT_DIR$/Lab1-Phase1/Lab1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1/Lab1-Phase1.iml" filepath="$PROJECT_DIR$/Lab1/Lab1-Phase1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1-Phase2/Lab1-Phase2.iml" filepath="$PROJECT_DIR$/Lab1-Phase2/Lab1-Phase2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1Phase3/Lab1Phase3.iml" filepath="$PROJECT_DIR$/Lab1Phase3/Lab1Phase3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Lab1Phase4/Lab1Phase4.iml" filepath="$PROJECT_DIR$/Lab1Phase4/Lab1Phase4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/waa-june-2022-ashish.iml" filepath="$PROJECT_DIR$/.idea/waa-june-2022-ashish.iml" />
+    </modules>
+  </component>
+</project>
