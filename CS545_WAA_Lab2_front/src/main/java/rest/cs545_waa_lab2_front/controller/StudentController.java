@@ -9,11 +9,9 @@ import rest.cs545_waa_lab2_front.service.impl.StudentServiceImp;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/students")
 @AllArgsConstructor
-@CrossOrigin
 public class StudentController {
 
 

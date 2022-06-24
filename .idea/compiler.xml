@@ -2,19 +2,33 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="demo" />
+        <module name="CS545_WAA_Lab2_front" />
+        <module name="CS545_WAA_Lab2_DTO" />
+        <module name="CS545_WAA_Lab2" />
+        <module name="ModelMapper" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="CS545_WAA_Lab2" target="17" />
+      <module name="CS545_WAA_Lab2_DTO" target="17" />
+      <module name="CS545_WAA_Lab2_front" target="17" />
+      <module name="CS545_WAA_Lab2_modelmapper" target="17" />
       <module name="demo" target="17" />
+      <module name="ModelMapper" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="CS545_WAA_Lab2" options="-parameters" />
+      <module name="CS545_WAA_Lab2_DTO" options="-parameters" />
+      <module name="CS545_WAA_Lab2_front" options="-parameters" />
+      <module name="CS545_WAA_Lab2_modelmapper" options="-parameters" />
+      <module name="ModelMapper" options="-parameters" />
       <module name="demo" options="-parameters" />
     </option>
   </component>

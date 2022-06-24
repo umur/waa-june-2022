@@ -1,15 +1,13 @@
-package rest.cs545_waa_lab2.service.impl;
+package rest.cs545_waa_lab2_dto.service.impl;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import rest.cs545_waa_lab2.entity.Course;
-import rest.cs545_waa_lab2.entity.Student;
-import rest.cs545_waa_lab2.repository.StudentRepo;
-import rest.cs545_waa_lab2.service.StudentService;
+import rest.cs545_waa_lab2_dto.entity.Student;
+import rest.cs545_waa_lab2_dto.repository.StudentRepo;
+import rest.cs545_waa_lab2_dto.service.StudentService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 @AllArgsConstructor

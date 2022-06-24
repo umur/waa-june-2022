@@ -1,8 +1,8 @@
-package rest.cs545_waa_lab2.repository;
+package rest.cs545_waa_lab2_dto.repository;
 
 import org.springframework.stereotype.Repository;
-import rest.cs545_waa_lab2.entity.Course;
-import rest.cs545_waa_lab2.entity.Student;
+import rest.cs545_waa_lab2_dto.entity.Course;
+import rest.cs545_waa_lab2_dto.entity.Student;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +12,7 @@ public class StudentRepo {
 
     private static List<Student> students= new ArrayList<>();
 
-    public StudentRepo (){
+    public StudentRepo(){
         Course c1 = new Course(1,"WAA","CS545");
         Course c2 = new Course(2,"WAP","CS445");
         Course c3 = new Course(3,"ASD","CS525");

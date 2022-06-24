@@ -25,15 +25,15 @@ private final ModelMapper modelMapper;
 
     @Override
     public List<StudentDto> getStudentByMajor(String major) {
-       List<StudentDto> students = new ArrayList<>();
-       for (Student std :studentRepo.findAllStudents()){
-           if (std.getMajor().equalsIgnoreCase(major)){
-               students.add(modelMapper.map(std,StudentDto.class));
-           }
-       }
-
-        return students;
+        var result = new ArrayList<StudentDto>();
+        for (Student s: studentRepo.findAllStudents()){
+            if (s.getMajor().equalsIgnoreCase(major)){
+                result.add( modelMapper.map(s,StudentDto.class));
+            }
+        }
+        return result;
     }
+
 
 //    @Override
 //    public List<Student> getStudentByMajor(String major) {

@@ -1,7 +1,8 @@
-package rest.cs545_waa_lab2.repository;
+package rest.cs545_waa_lab2_dto.repository;
 
 import org.springframework.stereotype.Repository;
-import rest.cs545_waa_lab2.entity.Course;
+import rest.cs545_waa_lab2_dto.entity.Course;
+
 
 import java.util.ArrayList;
 import java.util.List;
