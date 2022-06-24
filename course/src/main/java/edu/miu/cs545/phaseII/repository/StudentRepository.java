@@ -1,9 +1,9 @@
-package edu.miu.cs545.phaseIII.repository;
+package edu.miu.cs545.phaseII.repository;
 
-import edu.miu.cs545.phaseIII.dto.StudentDto;
-import edu.miu.cs545.phaseIII.entity.Course;
-import edu.miu.cs545.phaseIII.entity.Student;
-import edu.miu.cs545.phaseIII.utils.StudentUtils;
+import edu.miu.cs545.phaseII.dto.StudentDto;
+import edu.miu.cs545.phaseII.entity.Course;
+import edu.miu.cs545.phaseII.entity.Student;
+import edu.miu.cs545.phaseII.utils.StudentUtils;
 import org.springframework.stereotype.Repository;
 
 
@@ -13,7 +13,7 @@ import java.util.List;
 @Repository
 public class StudentRepository {
     private static final List<Student> students = new ArrayList<>();
-    private static final CourseRepository courseRepository = new CourseRepository();
+    private static final CourseRepository courseRepository= new CourseRepository();
     public StudentRepository(){
         Student s1 = new Student(1,"Raul","Tejada", "r.tejada@funi.com","Mechanical Engineering",3.7);
         Student s2 = new Student(2,"Veronica","Santangelo", "v.santangelo@funi.com","Computer Programming",3.82);
