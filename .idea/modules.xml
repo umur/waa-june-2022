@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/waa-2022-restful/phase-I/phasei.iml" filepath="$PROJECT_DIR$/waa-2022-restful/phase-I/phasei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waa-2022-restful/phaseii/phaseii.iml" filepath="$PROJECT_DIR$/waa-2022-restful/phaseii/phaseii.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waa-2022-restful/restful.iml" filepath="$PROJECT_DIR$/waa-2022-restful/restful.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/waa-june-2022.iml" filepath="$PROJECT_DIR$/.idea/waa-june-2022.iml" />
+    </modules>
+  </component>
+</project>
